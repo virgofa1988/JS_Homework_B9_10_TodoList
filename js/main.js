@@ -6,6 +6,7 @@ function getEle(id) {
 var taskList = new taskList();
 var validation = new Validation();
 
+getEle('date').innerHTML = Date();
 getLocalStorage();
 
 // Lay Du Lieu Nguoi Dung
@@ -71,12 +72,17 @@ function taoBangTodo(taskArray) {
   for (i = 0; i < taskArray.length; i++) {
     if (taskArray[i].taskStatus === "completed") {
       completed += createTask(taskArray[i]);
+      console.log(completed);
+
     } else {
       todo += createTask(taskArray[i]);
+      console.log(todo);
+
+
     }
   }
-  getEle("todo").innerHTML = todo;
   getEle("completed").innerHTML = completed;
+  getEle("todo").innerHTML = todo;
 }
 
 
